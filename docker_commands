@@ -8,6 +8,35 @@ docker run -d -p 7111:3111 techtrends
 
 ## Docker commands used to get the application logs
 # TODO: insert the docker logs command
+docker logs -f 5a1bbfde176e
 
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
+
+vagrant@localhost:~/cchla1021/project-techtrends> docker logs -f 5a1bbfde176e
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+2022-03-28 01:34:29,277 - INFO -  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+2022-03-28 01:35:08,026 - INFO - 192.168.86.33 - - [28/Mar/2022 01:35:08] "GET / HTTP/1.1" 200 -
+2022-03-28 01:36:39,899 - INFO - 192.168.86.33 - - [28/Mar/2022 01:36:39] "GET / HTTP/1.1" 200 -
+2022-03-28 01:36:46,018 - INFO - 2020 CNCF Annual Report Article retrieved, post
+2022-03-28 01:36:46,025 - INFO - 192.168.86.33 - - [28/Mar/2022 01:36:46] "GET /1 HTTP/1.1" 200 -
+2022-03-28 01:36:50,845 - INFO - Udacity Project 1 Article retrieved, post
+2022-03-28 01:36:50,846 - INFO - 192.168.86.33 - - [28/Mar/2022 01:36:50] "GET /8 HTTP/1.1" 200 -
+2022-03-28 01:36:55,668 - INFO - 192.168.86.33 - - [28/Mar/2022 01:36:55] "GET //10 HTTP/1.1" 308 -
+2022-03-28 01:36:55,686 - INFO - 192.168.86.33 - - [28/Mar/2022 01:36:55] "GET / HTTP/1.1" 200 -
+2022-03-28 01:36:58,742 - INFO - Article does not exist!
+2022-03-28 01:36:58,748 - INFO - 192.168.86.33 - - [28/Mar/2022 01:36:58] "GET /10 HTTP/1.1" 404 -
+2022-03-28 01:37:02,986 - INFO - About Us page
+2022-03-28 01:37:02,992 - INFO - 192.168.86.33 - - [28/Mar/2022 01:37:02] "GET /about HTTP/1.1" 200 -
+2022-03-28 01:37:08,069 - INFO - 192.168.86.33 - - [28/Mar/2022 01:37:08] "GET /create HTTP/1.1" 200 -
+2022-03-28 01:37:21,974 - INFO - Joe Chien test Article retrieved, post
+2022-03-28 01:37:21,981 - INFO - 192.168.86.33 - - [28/Mar/2022 01:37:21] "POST /create HTTP/1.1" 302 -
+2022-03-28 01:37:21,999 - INFO - 192.168.86.33 - - [28/Mar/2022 01:37:21] "GET / HTTP/1.1" 200 -
+2022-03-28 01:37:41,124 - INFO - Joe Chien test Article retrieved, post
+2022-03-28 01:37:41,125 - INFO - 192.168.86.33 - - [28/Mar/2022 01:37:41] "GET /10 HTTP/1.1" 200 -
+2022-03-28 01:37:51,669 - INFO - 192.168.86.33 - - [28/Mar/2022 01:37:51] "GET /metrics HTTP/1.1" 200 -
+
