@@ -3,7 +3,7 @@ LABEL maintainer="Joe Chien"
 
 COPY . /app
 WORKDIR /app
-RUN pip install -r requirements.txt
+RUN pip install -r ~/cchla1021/project-techtrends/techtrends/requirements.txt
 
 #EXPOSE 3111
 
