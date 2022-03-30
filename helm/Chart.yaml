@@ -1,0 +1,8 @@
+apiVersion: v1
+name: techtrends
+description: Udacity Cloudnative Project 1 Techtrends deply by helm chart
+keywords: 
+ - techtrends
+version: 1.0.0
+maintainers:
+ - name: JoeChien
