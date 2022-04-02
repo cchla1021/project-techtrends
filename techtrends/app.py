@@ -54,11 +54,13 @@ def post(post_id):
 # the result: OK - healthy message
 @app.route('/healthz')
 def healthz():
+    connection = get_db_connection()
     response = app.response_class(
             response=json.dumps({"result":"OK - healthy"}),
             status=200,
             mimetype='application/json'
     )
+    connection.close()
     return response
 
 # Define the Metrics endpoint
@@ -76,12 +78,13 @@ def metrics():
             status=200,
             mimetype='application/json'
     )
+    connection.close()
     return response
 
 # Define the About Us page
 @app.route('/about')
 def about():
-    logging.info('About Us page')
+    logging.info('About us page')
     return render_template('about.html')
 
 # Define the post creation functionality 
@@ -114,6 +117,13 @@ if __name__ == "__main__":
      if loglevel in ["CRITICAL", "DEBUG", "ERROR", "INFO", "WARNING",]
      else logging.DEBUG
    )
-   logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=loglevel)
+   
+   # Record the Techtrends application logs to STDOUT and STDERR
+   stdout_handler = logging.StreamHandler(sys.stdout) # STDOUT handler
+   stderr_handler = logging.StreamHandler(sys.stderr) # STDERR handler
+   handlers = [stderr_handler, stdout_handler]
+
+   # format output
+   logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=loglevel, handlers=handlers)
 
    app.run(host='0.0.0.0', port='3111')
