@@ -12,6 +12,6 @@ spec:
     helm:
       valueFiles:
       - values-staging.yaml
-    path: project-techtrends/helm
+    path: helm
     repoURL: https://github.com/cchla1021/project-techtrends.git
     targetRevision: HEAD
